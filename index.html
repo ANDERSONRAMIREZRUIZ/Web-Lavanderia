@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lavandería Fanor Vargas — Lavado, planchado y domicilio</title>
+  <meta name="description" content="Lavandería Fanor Vargas: lavado por kilos o por bolsa, planchado, prendas especiales, hogar y calzado. Recogida y entrega a domicilio." />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23061019'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%234db8ff' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='7' r='2.6' fill='%234db8ff'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Fanor Vargas</span>
+          <span class="brand__tag">lavandería</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#domicilios">Domicilios</a>
+        <a href="#precios">Precios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <div class="topbar__end">
+        <button class="pause" type="button" aria-pressed="false" title="Pausar animación">
+          <span class="pause__icon" aria-hidden="true"></span>
+          <span class="pause__text">Pausa</span>
+        </button>
+        <a class="pill pill--solid pill--sm" href="#contacto">Cotizar</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="top">
+      <div class="hero__sticky">
+
+        <!-- Escena: montón -> lavado -> pila doblada -->
+        <canvas class="scene" id="scene" aria-hidden="true"></canvas>
+
+        <div class="hero__content">
+          <div class="hero__content-inner">
+            <p class="eyebrow">
+              <span class="eyebrow__dot" aria-hidden="true"></span>
+              Lavandería Fanor Vargas
+            </p>
+
+            <h1 class="title">
+              <span class="line"><span>Tu lavandería</span></span>
+              <span class="line"><span>a <em>domicilio</em>.</span></span>
+            </h1>
+
+            <p class="lede">
+              Recogemos tus prendas en tu puerta, las lavamos, planchamos y te las devolvemos dobladas y listas.
+            </p>
+          </div>
+        </div>
+
+        <div class="hero__foot">
+          <div class="hero__foot-inner">
+            <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
+
+            <div class="foot-row">
+              <p class="hours">
+                Lun a sáb · 8:00 — 20:00<br />
+                C/ Fanor Vargas, Bogotá, Colombia
+              </p>
+
+              <div class="foot-right">
+                <span class="hint">Desliza para seguir el ciclo <span class="hint__arrow" aria-hidden="true"></span></span>
+
+                <div class="stages" aria-hidden="true">
+                  <span class="stage is-on"><b>01</b> Recogida</span>
+                  <span class="stage"><b>02</b> Lavado</span>
+                  <span class="stage"><b>03</b> Entrega</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="after" id="servicios">
+      <div class="container">
+        <p class="after__kicker">El ciclo completo</p>
+        <h2 class="after__title">Recogemos, lavamos y devolvemos <em>doblado</em>.</h2>
+        <p class="after__note">
+          Lavado por kilos o por bolsa, planchado, prendas especiales, hogar y calzado.
+          Aquí empieza el resto de la web.
+        </p>
+        <a class="pill pill--ink" href="#top">Volver al ciclo</a>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
