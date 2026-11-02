@@ -1,10 +1,19 @@
 <!doctype html>
-<html lang="es">
+<html lang="es" class="no-js">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Lavandería Fanor Vargas — Lavado, planchado y domicilio</title>
-  <meta name="description" content="Lavandería Fanor Vargas: lavado por kilos o por bolsa, planchado, prendas especiales, hogar y calzado. Recogida y entrega a domicilio." />
+  <meta name="description" content="Lavandería Fanor Vargas: lavado por kilos o por bolsa, planchado, prendas especiales, hogar y calzado. Recogida y entrega a domicilio en Bogotá." />
+
+  <script>
+    document.documentElement.classList.replace("no-js", "js");
+    try {
+      if (localStorage.getItem("fv-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  </script>
 
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23061019'/%3E%3Ccircle cx='16' cy='16' r='9' fill='none' stroke='%234db8ff' stroke-width='2.5'/%3E%3Ccircle cx='16' cy='7' r='2.6' fill='%234db8ff'/%3E%3C/svg%3E" />
 
@@ -35,9 +44,17 @@
       </nav>
 
       <div class="topbar__end">
-        <button class="pause" type="button" aria-pressed="false" title="Pausar animación">
-          <span class="pause__icon" aria-hidden="true"></span>
-          <span class="pause__text">Pausa</span>
+        <button class="theme" type="button" aria-label="Cambiar a la versión clara" title="Cambiar a la versión clara">
+          <span class="theme__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <g class="theme__sun">
+                <circle cx="12" cy="12" r="4.2" />
+                <path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5" />
+              </g>
+              <path class="theme__moon" d="M20.2 14.5A8.6 8.6 0 0 1 9.5 3.8a8.7 8.7 0 1 0 10.7 10.7Z" />
+            </svg>
+          </span>
+          <span class="theme__text">Claro</span>
         </button>
         <a class="pill pill--solid pill--sm" href="#contacto">Cotizar</a>
       </div>
@@ -48,7 +65,7 @@
     <section class="hero" id="top">
       <div class="hero__sticky">
 
-        <!-- Escena: montón -> lavado -> pila doblada -->
+        <!-- Escena: camioneta -> bolsa -> lavado -> pila doblada -->
         <canvas class="scene" id="scene" aria-hidden="true"></canvas>
 
         <div class="hero__content">
@@ -58,14 +75,35 @@
               Lavandería Fanor Vargas
             </p>
 
-            <h1 class="title">
-              <span class="line"><span>Tu lavandería</span></span>
-              <span class="line"><span>a <em>domicilio</em>.</span></span>
-            </h1>
+            <!-- Cuatro pasos: el texto cambia con el scroll, en sincronía con la escena -->
+            <div class="steps">
+              <div class="step" data-step="1">
+                <h1 class="title">
+                  <span class="line"><span>Tu lavandería a domicilio va en camino</span></span>
+                </h1>
+              </div>
 
-            <p class="lede">
-              Recogemos tus prendas en tu puerta, las lavamos, planchamos y te las devolvemos dobladas y listas.
-            </p>
+              <div class="step" data-step="2">
+                <h2 class="title title--step">¡Nuestra lavandería llega a tu puerta!</h2>
+                <p class="step__text">
+                  ¡Nos acercamos a ti! Programa la recogida de tu ropa y pasamos por tu puerta. Así de fácil, sin salir de casa.
+                </p>
+              </div>
+
+              <div class="step" data-step="3">
+                <h2 class="title title--step">Cuidamos tus prendas como tú lo harías.</h2>
+                <p class="step__text">
+                  Sabemos lo mucho que quieres tus prendas. Por eso, las lavamos y planchamos con el cuidado que merecen.
+                </p>
+              </div>
+
+              <div class="step" data-step="4">
+                <h2 class="title title--step">Entregamos tu ropa limpia en tu domicilio</h2>
+                <p class="step__text">
+                  ¡Tu ropa de vuelta en casa en un abrir y cerrar de ojos! Te la llevamos limpia, doblada y lista para usar, mejor que nueva.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -74,18 +112,20 @@
             <div class="progress" aria-hidden="true"><span class="progress__bar"></span></div>
 
             <div class="foot-row">
+              <!-- CAMBIAR: horario y dirección reales del negocio -->
               <p class="hours">
-                Lun a sáb · 8:00 — 20:00<br />
-                C/ Fanor Vargas, Bogotá, Colombia
+                Lun a sáb · 7:00 — 5:00<br />
+                Lavandería en Bogotá, Colombia
               </p>
 
               <div class="foot-right">
                 <span class="hint">Desliza para seguir el ciclo <span class="hint__arrow" aria-hidden="true"></span></span>
 
                 <div class="stages" aria-hidden="true">
-                  <span class="stage is-on"><b>01</b> Recogida</span>
-                  <span class="stage"><b>02</b> Lavado</span>
-                  <span class="stage"><b>03</b> Entrega</span>
+                  <span class="stage is-on"><b>01</b> En camino</span>
+                  <span class="stage"><b>02</b> Recogida</span>
+                  <span class="stage"><b>03</b> Lavado</span>
+                  <span class="stage"><b>04</b> Entrega</span>
                 </div>
               </div>
             </div>
@@ -94,18 +134,284 @@
       </div>
     </section>
 
-    <section class="after" id="servicios">
+    <!-- ========================= SERVICIOS ========================= -->
+    <section class="sec" id="servicios" data-reveal>
       <div class="container">
-        <p class="after__kicker">El ciclo completo</p>
-        <h2 class="after__title">Recogemos, lavamos y devolvemos <em>doblado</em>.</h2>
-        <p class="after__note">
+        <p class="sec__kicker">Servicios</p>
+        <h2 class="sec__title">Recogemos, lavamos y devolvemos <em>doblado</em>.</h2>
+        <p class="sec__lead">
           Lavado por kilos o por bolsa, planchado, prendas especiales, hogar y calzado.
-          Aquí empieza el resto de la web.
+          Todo sale de tu puerta y vuelve listo para usar.
         </p>
-        <a class="pill pill--ink" href="#top">Volver al ciclo</a>
+
+        <ul class="cards">
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">01</span>
+            <h3 class="card__title">Lavado por kilos</h3>
+            <p class="card__text">
+              Camisetas, pantalones, toallas y todo lo que aguante la lavadora.
+              Por kilo o por bolsa cerrada, con detergente y suavizante incluidos.
+            </p>
+          </li>
+
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">02</span>
+            <h3 class="card__title">Planchado</h3>
+            <p class="card__text">
+              Camisas, pantalones, faldas y vestidos, planchados con vapor y
+              devueltos en percha cuando lo pidas.
+            </p>
+          </li>
+
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">03</span>
+            <h3 class="card__title">Prendas especiales</h3>
+            <p class="card__text">
+              Trajes, chaquetas, vestidos de gala y tejidos delicados.
+              Tratamiento aparte, sin mezclar con la carga de siempre.
+            </p>
+          </li>
+
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">04</span>
+            <h3 class="card__title">Hogar</h3>
+            <p class="card__text">
+              Sábanas, fundas de almohada, toallas, cubrecamas y cortinas.
+              Recogemos las piezas grandes directamente en tu casa.
+            </p>
+          </li>
+
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">05</span>
+            <h3 class="card__title">Calzado</h3>
+            <p class="card__text">
+              Tenis y zapatillas lavados a mano, con secado lento para que
+              no deformeden ni pierdan color.
+            </p>
+          </li>
+
+          <li class="card" data-reveal>
+            <span class="card__num" aria-hidden="true">06</span>
+            <h3 class="card__title">A domicilio</h3>
+            <p class="card__text">
+              Vamos a tu puerta a recoger y a entregar. Sin filas, sin bolsas
+              pesadas y sin mover el carro.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ========================= PRECIOS ========================= -->
+    <section class="sec sec--deep" id="precios" data-reveal>
+      <div class="container">
+        <p class="sec__kicker">Precios</p>
+        <h2 class="sec__title">Precios claros, <em>sin sorpresas</em>.</h2>
+        <p class="sec__lead">
+          Cotizamos antes de recoger: nos dices qué tienes y te decimos
+          cuánto sale, para que apruebes el valor sin compromiso.
+        </p>
+
+        <div class="price-grid">
+          <!-- CAMBIAR: precios de referencia en COP -->
+          <div class="price-card" data-reveal>
+            <p class="price-card__name">Lavado</p>
+            <table class="price-table">
+              <caption class="visually-hidden">Precios de lavado</caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Lavado por kilo <span>mínimo 3 kg</span></th>
+                  <td>$4.500<span class="unit">/kg</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Bolsa cerrada <span>hasta 6 kg</span></th>
+                  <td>$22.000<span class="unit">/bolsa</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Lavado con encogido <span>sábanas y toallas</span></th>
+                  <td>$6.000<span class="unit">/pieza</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Prenda delicada <span>vestido o traje</span></th>
+                  <td>$12.000<span class="unit">/pieza</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="price-card" data-reveal>
+            <p class="price-card__name">Planchado y complementos</p>
+            <table class="price-table">
+              <caption class="visually-hidden">Precios de planchado y complementos</caption>
+              <tbody>
+                <tr>
+                  <th scope="row">Planchado por kilo <span>mínimo 2 kg</span></th>
+                  <td>$3.500<span class="unit">/kg</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Camisa planchada <span>en percha</span></th>
+                  <td>$2.500<span class="unit">/pieza</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Cobija o edredón <span>lavado y secado</span></th>
+                  <td>$12.000<span class="unit">/pieza</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Tenis o zapatillas <span>lavado a mano</span></th>
+                  <td>$9.000<span class="unit">/par</span></td>
+                </tr>
+                <tr>
+                  <th scope="row">Cortinas <span>según medida</span></th>
+                  <td>desde $8.000<span class="unit">/m²</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p class="sec__note">
+          Precios de referencia en pesos colombianos (COP). Incluyen detergente,
+          suavizante y empaque. El valor final se confirma en el momento de la recogida.
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================= DOMICILIOS ========================= -->
+    <section class="sec" id="domicilios" data-reveal>
+      <div class="container">
+        <p class="sec__kicker">Domicilios</p>
+        <h2 class="sec__title">Tres pasos y <em>ya está</em>.</h2>
+        <p class="sec__lead">
+          El mismo ciclo que ves arriba, hecho por nosotros: recogemos en tu
+          puerta, lavamos y planchamos, y volvemos con todo doblado.
+        </p>
+
+        <div class="split">
+          <ul class="cards cards--stack">
+            <li class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">01 · Recogida</span>
+              <h3 class="card__title">Vamos por tus prendas</h3>
+              <p class="card__text">
+                Nos escribes con tu dirección y una foto de lo que tienes.
+                Pasamos el mismo día o al día siguiente, en la hora que te quede cómoda.
+              </p>
+            </li>
+
+            <li class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">02 · Lavado</span>
+              <h3 class="card__title">Lavamos y planchamos</h3>
+              <p class="card__text">
+                Cada carga se separa por color, tejido y nivel de suciedad.
+                Las prendas especiales se tratan aparte.
+              </p>
+            </li>
+
+            <li class="card" data-reveal>
+              <span class="card__num" aria-hidden="true">03 · Entrega</span>
+              <h3 class="card__title">Vuelve doblado y listo</h3>
+              <p class="card__text">
+                Te lo llevamos a tu puerta, doblado y en percha si así lo pediste.
+                Pagas en el momento de la entrega, en efectivo o transferencia.
+              </p>
+            </li>
+          </ul>
+
+          <!-- CAMBIAR: cobertura, mínimo y tiempos reales -->
+          <dl class="facts" data-reveal>
+            <div class="facts__row">
+              <dt>Cobertura</dt>
+              <dd>Bogotá y municipios cercanos</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Horario</dt>
+              <dd>Lun a sáb · 8:00 — 20:00</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Domicilio</dt>
+              <dd>Gratis desde $25.000</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Pedido mínimo</dt>
+              <dd>$18.000</dd>
+            </div>
+            <div class="facts__row">
+              <dt>Entrega</dt>
+              <dd>24 a 48 horas</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= CONTACTO ========================= -->
+    <section class="sec sec--deep" id="contacto" data-reveal>
+      <div class="container split">
+        <div>
+          <p class="sec__kicker">Contacto</p>
+          <h2 class="sec__title">Pide tu recogida <em>hoy mismo</em>.</h2>
+          <p class="sec__lead">
+            Escríbenos por WhatsApp con tu dirección y cantidad de ropa;
+            te confirmamos el precio antes de pasar.
+          </p>
+
+          <div class="actions">
+            <!-- CAMBIAR: número de WhatsApp real (formato internacional sin +) -->
+            <a class="pill pill--solid" href="https://wa.me/573000000000" target="_blank" rel="noopener">
+              Escribir por WhatsApp
+            </a>
+            <!-- CAMBIAR: teléfono real -->
+            <a class="pill pill--ghost" href="tel:+573000000000">Llamar</a>
+            <a class="pill pill--ghost" href="#precios">Ver precios</a>
+          </div>
+        </div>
+
+        <!-- CAMBIAR: datos reales de contacto -->
+        <dl class="facts">
+          <div class="facts__row">
+            <dt>WhatsApp</dt>
+            <dd><a href="https://wa.me/573000000000" target="_blank" rel="noopener">+57 300 000 0000</a></dd>
+          </div>
+          <div class="facts__row">
+            <dt>Teléfono</dt>
+            <dd><a href="tel:+573000000000">+57 300 000 0000</a></dd>
+          </div>
+          <div class="facts__row">
+            <dt>Correo</dt>
+            <dd><a href="mailto:hola@lavanderiafv.com">hola@lavanderiafv.com</a></dd>
+          </div>
+          <div class="facts__row">
+            <dt>Dirección</dt>
+            <dd>C/ Fanor Vargas, Bogotá</dd>
+          </div>
+          <div class="facts__row">
+            <dt>Horario</dt>
+            <dd>Lun a sáb · 8:00 — 20:00</dd>
+          </div>
+        </dl>
       </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="footer__inner container">
+      <a class="brand" href="#top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Fanor Vargas</span>
+          <span class="brand__tag">lavandería</span>
+        </span>
+      </a>
+
+      <nav class="footer__nav" aria-label="Pie de página">
+        <a href="#servicios">Servicios</a>
+        <a href="#precios">Precios</a>
+        <a href="#domicilios">Domicilios</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <p class="footer__legal">© 2026 Lavandería Fanor Vargas · Bogotá, Colombia</p>
+    </div>
+  </footer>
 
   <script src="assets/js/main.js"></script>
 </body>
