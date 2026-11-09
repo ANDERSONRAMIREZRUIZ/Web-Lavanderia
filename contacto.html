@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es-CO" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto — Lavandería Fanor Vargas</title>
+  <meta name="description" content="Contacta a Lavandería Fanor Vargas por WhatsApp, celular o correo. Servicio a domicilio en Bogotá, de lunes a sábado." />
+  <meta name="theme-color" content="#061019" />
+
+  <script>
+    document.documentElement.classList.replace("no-js", "js");
+    try {
+      if (localStorage.getItem("fv-theme") === "light") {
+        document.documentElement.setAttribute("data-theme", "light");
+      }
+    } catch (e) {}
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body class="contact-page">
+  <a class="skip" href="#contenido">Saltar al contenido</a>
+
+  <header class="topbar">
+    <div class="topbar__inner">
+      <a class="brand" href="index.html#top">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__text">
+          <span class="brand__name">Fanor Vargas</span>
+          <span class="brand__tag">lavandería</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Principal">
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#agenda">Agendar</a>
+        <a href="index.html#cobertura">Cobertura</a>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="contacto.html" aria-current="page">Contacto</a>
+      </nav>
+
+      <div class="topbar__end">
+        <button class="navtoggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+        <button class="theme" type="button" aria-label="Cambiar a la versión clara" title="Cambiar a la versión clara">
+          <span class="theme__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <g class="theme__sun">
+                <circle cx="12" cy="12" r="4.2" />
+                <path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.3 5.3l1.5 1.5M17.2 17.2l1.5 1.5M18.7 5.3l-1.5 1.5M6.8 17.2l-1.5 1.5" />
+              </g>
+              <path class="theme__moon" d="M20.2 14.5A8.6 8.6 0 0 1 9.5 3.8a8.7 8.7 0 1 0 10.7 10.7Z" />
+            </svg>
+          </span>
+          <span class="theme__text">Claro</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="contenido" class="contact-main">
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-intro">
+          <p class="sec__kicker">Estamos para ayudarte</p>
+          <h1 class="sec__title">Hablemos de tu próximo lavado.</h1>
+          <p class="sec__lead">Escríbenos o llámanos. Te ayudamos a elegir el servicio y coordinamos la recogida a domicilio en Bogotá.</p>
+        </div>
+
+        <section class="contact-forms" aria-label="Formularios de contacto">
+          <div class="contact-form-tabs" role="tablist" aria-label="Tipo de formulario">
+            <button class="contact-form-tab is-active" id="tab-agenda" type="button" role="tab" aria-selected="true" aria-controls="panel-agenda" tabindex="0">Agenda la visita</button>
+            <button class="contact-form-tab" id="tab-consulta" type="button" role="tab" aria-selected="false" aria-controls="panel-consulta" tabindex="-1">Formulario de contacto</button>
+          </div>
+
+          <div class="contact-form-panel is-active" id="panel-agenda" role="tabpanel" aria-labelledby="tab-agenda">
+            <p class="contact-form-panel__lead">Completa tus datos y te ayudaremos a coordinar la recogida.</p>
+            <form class="form contact-form" id="contact-agenda-form">
+              <div class="form__row">
+                <label class="field">
+                  <span>Nombre</span>
+                  <input name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre" />
+                </label>
+                <label class="field">
+                  <span>Celular</span>
+                  <input name="celular" type="tel" required autocomplete="tel" placeholder="Tu número de celular" />
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="field">
+                  <span>Dirección</span>
+                  <input name="direccion" type="text" required autocomplete="street-address" placeholder="Calle, número, apto" />
+                </label>
+                <label class="field">
+                  <span>Barrio</span>
+                  <input name="barrio" type="text" required placeholder="Tu barrio" />
+                </label>
+              </div>
+              <div class="form__row">
+                <label class="field">
+                  <span>Servicio</span>
+                  <select name="servicio" required>
+                    <option value="" selected disabled>Elige una opción</option>
+                    <option>Lavado de ropa</option>
+                    <option>Alfombras</option>
+                    <option>Muebles</option>
+                    <option>Institucional / empresa</option>
+                    <option>Otro</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>Fecha de recogida</span>
+                  <input name="fecha" type="date" required />
+                </label>
+              </div>
+              <label class="field">
+                <span>Detalles (opcional)</span>
+                <textarea name="detalles" rows="3" placeholder="Cantidad aproximada, manchas difíciles, horario preferido…"></textarea>
+              </label>
+              <p class="form__note">Al enviar, se abrirá WhatsApp con tu solicitud para confirmar la recogida.</p>
+              <button class="pill pill--solid contact-form__submit" type="submit">Agendar por WhatsApp</button>
+            </form>
+          </div>
+
+          <div class="contact-form-panel" id="panel-consulta" role="tabpanel" aria-labelledby="tab-consulta" hidden>
+            <p class="contact-form-panel__lead">Déjanos tu consulta y prepararemos un correo para contacto@lavanderiafv.com.</p>
+            <form class="form contact-form" id="contact-message-form">
+              <div class="form__row">
+                <label class="field">
+                  <span>Nombre</span>
+                  <input name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre" />
+                </label>
+                <label class="field">
+                  <span>Celular (opcional)</span>
+                  <input name="celular" type="tel" autocomplete="tel" placeholder="Tu número de celular" />
+                </label>
+              </div>
+              <label class="field">
+                <span>Correo electrónico (opcional)</span>
+                <input name="correo" type="email" autocomplete="email" placeholder="tu@correo.com" />
+              </label>
+              <label class="field">
+                <span>¿En qué podemos ayudarte?</span>
+                <textarea name="mensaje" rows="5" required placeholder="Escribe aquí tu consulta…"></textarea>
+              </label>
+              <p class="form__note">Se abrirá tu aplicación de correo para que revises y envíes el mensaje.</p>
+              <button class="pill pill--solid contact-form__submit" type="submit">Enviar por correo</button>
+            </form>
+          </div>
+        </section>
+
+        <div class="contact-socials" aria-label="Contacto directo">
+          <a class="pill pill--ghost" href="https://wa.me/573103100845" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+        </div>
+
+        <div class="contact-details">
+          <div>
+            <p class="contact-details__label">Horario de atención</p>
+            <p>Lunes a sábado · 8:00 a. m. — 8:00 p. m.</p>
+          </div>
+          <div>
+            <p class="contact-details__label">Zona de servicio</p>
+            <p>Cra. 10a #28-33, Bogotá</p>
+          </div>
+        </div>
+
+        <section class="contact-map" aria-labelledby="contact-map-title">
+          <div class="contact-map__intro">
+            <h2 class="sec__title" id="contact-map-title">Nuestra ubicación</h2>
+          </div>
+          <div class="contact-map__frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d991.7666194015173!2d-74.100553858367!3d4.570598728295325!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9900654c62f9%3A0xd8c81c09886f51b4!2sLavander%C3%ADa!5e1!3m2!1ses!2sco!4v1794254868451!5m2!1ses!2sco"
+              title="Ubicación de Lavandería en Google Maps"
+              width="100%"
+              height="450"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="strict-origin-when-cross-origin"></iframe>
+          </div>
+        </section>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__grid container">
+      <div class="footer__col footer__col--brand">
+        <a class="brand" href="index.html#top">
+          <span class="brand__mark" aria-hidden="true"></span>
+          <span class="brand__text">
+            <span class="brand__name">Fanor Vargas</span>
+            <span class="brand__tag">lavandería</span>
+          </span>
+        </a>
+        <p class="footer__about">
+          Tu lavandería a domicilio en Bogotá: lavado, planchado, alfombras,
+          muebles y contratos para empresas. Recogemos, lavamos y entregamos.
+        </p>
+        <a class="pill pill--ghost pill--sm footer__wa" href="https://wa.me/573103100845" target="_blank" rel="noopener">Escríbenos por WhatsApp</a>
+      </div>
+
+      <nav class="footer__col footer__col--links" aria-label="Secciones del sitio">
+        <p class="footer__title">Secciones</p>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#pasos">Cómo funciona</a>
+        <a href="index.html#agenda">Agenda tu recogida</a>
+        <a href="index.html#cobertura">Cobertura</a>
+        <a href="index.html#nosotros">Quiénes somos</a>
+        <a href="index.html#simulador">Simula tu servicio</a>
+        <a href="index.html#faq">Preguntas frecuentes</a>
+        <a href="contacto.html">Contacto</a>
+      </nav>
+
+      <div class="footer__col">
+        <p class="footer__title">Contacto</p>
+        <p class="footer__line">WhatsApp: <a href="https://wa.me/573103100845" target="_blank" rel="noopener">+57 310 310 0845</a></p>
+        <p class="footer__line">Celular: <a href="tel:+573103100845">310 310 0845</a></p>
+        <p class="footer__line">Correo: <a href="mailto:contacto@lavanderiafv.com">contacto@lavanderiafv.com</a></p>
+        <p class="footer__line">Lun a sáb · 8:00 — 20:00</p>
+        <p class="footer__line">Cra. 10a #28-33, Bogotá</p>
+      </div>
+    </div>
+
+    <div class="footer__bottom container">
+      <p class="footer__legal">© 2026 Lavandería Fanor Vargas · Bogotá, Colombia</p>
+      <a class="footer__top" href="index.html#top">Volver arriba ↑</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/contact.js"></script>
+</body>
+</html>
